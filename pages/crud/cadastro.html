@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Crud</title>
+    <link rel="stylesheet" href="../../assets/css/bulma.min.css"/>
+</head>
+<body>
+  <section class="hero is-success ">
+    <div class="hero-body is-full-height">
+      <div class="container">
+        <h1 class="title">
+          Cadastro
+        </h1>
+      </div>
+    </div>
+  </section>
+  <nav class="breadcrumb is-centered is-large" aria-label="breadcrumbs">
+      <ul>
+        <li><a href="../index.html">Início</a></li>
+        <li><a href="../login/login.html" >Login</a></li>
+        <li class="is-active"><a href="#" aria-current="page">Cadastro</a></li>
+      </ul>
+  </nav>
+  <div class="box">
+    <div class="columns is-mobile">
+      <div class="column is-two-thirds">
+        <h2 class="title">Cadastro de Funcionários</h2>
+      </div>
+      <div class="column">
+        <button class="button is-success" onclick="openModal()" id="new">Incluir</i></button>
+      </div>
+      <div class="column">
+        <button class="button is-success is-small" onclick="search()">Buscar dados</button>
+        <input id="pesquisa" type="search"/>
+      </div>
+    </div>
+    <div class="table is-vcentered">
+      <table class="table-is-stripped">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Email</th>
+            <th>Senha</th>
+            <th class="acao">Editar</th>
+            <th class="acao">Excluir</th>   
+            <th class="acao">Selecionar</th>    
+            <th>
+              <button class="acao" id="extra" onclick="removerItem()">Excluir selecionados</button>
+            </th>        
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="modal-container modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <div class="box">
+        <form class="box">
+          <div class="field">
+            <label class="label" for="m-nome">Nome</label>
+            <div class="control">
+              <input id="m-nome" class="input" type="text">
+            </div>
+          </div>
+        
+          <div class="field">
+            <label for="m-idade" class="label">Idade</label>
+            <div class="control">
+              <input id="m-idade" class="input" type="text">
+            </div>
+          </div>
+    
+          <div class="field">
+            <label for="m-email" class="label">Email</label>
+            <div class="control">
+              <input id="m-email" class="input" type="text">
+            </div>
+          </div>
+    
+          <div class="field">
+            <label for="m-senha" class="label">Senha</label>
+            <div class="control">
+              <input id="m-senha" class="input" type="password">
+            </div>
+          </div>
+        
+          <button id="btnSalvar" class="button">Salvar</button>
+          <button class="button">Cancel</button>
+        </form>
+      </div>
+    </div>
+  </div>
+<script src="../../assets/js/index.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,14 @@
+{
+  "name": "test-project",
+  "version": "1.0.0",
+  "description": "A Node.js project",
+  "main": "src/index.js",
+  "private": true,
+  "scripts": {
+      "start": "node ./index.js"
+  },
+
+  "dependencies": {
+    "bulma": "^0.9.4"
+  }
+}
