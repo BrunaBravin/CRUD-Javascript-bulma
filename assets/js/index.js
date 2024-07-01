@@ -133,10 +133,20 @@ function opcao() {
 }
 
 function removerItem() {
-  ckList = document.querySelectorAll("input[type=checkbox]:checked");
-  ckList.forEach(function(el) {
-    el.parentElement.parentElement.remove();
-  });
+    let ckList = document.querySelectorAll("input[type=checkbox]:checked");
+  
+    let indices = [];
+    ckList.forEach(function(el) {
+      let row = el.parentElement.parentElement;
+      let index = Array.from(tbody.children).indexOf(row);
+      indices.push(index);
+    });
+    indices.sort((a, b) => b - a);  // Em ordem decrescente para evitar problemas de índice ao remover
+    indices.forEach(index => {
+      itens.splice(index, 1);
+    });
+    setItensBD();
+    loadItens();
 }
 
 function loadItensPesquisa(itensNovos) {
