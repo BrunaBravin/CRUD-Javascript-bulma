@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="../../assets/css/bulma.min.css"/>
+</head>
+<body>
+<section class="hero is-success is-light">
+  <div class="hero-body is-full-height">
+    <div class="container">
+      <h1 class="title">
+        Cadastro de Usuário
+      </h1>
+    </div>
+  </div>
+</section>
+<nav class="breadcrumb is-centered is-large" aria-label="breadcrumbs">
+    <ul>
+      <li><a href="/pages/index.html" aria-current="page">Início</a></li>
+    </ul>
+</nav>
+<form action="">
+    <h1>Cadastro de Usuário</h1>
+    <label for="nome">Nome:</label>
+    <input type="text" name="nome" id="nome" />
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email" />
+    <label for="login">Login:</label>
+    <input type="text" name="login" id="login" />
+    <label for="senha">Senha:</label>
+    <input type="password" name="senha" id="senha" />
+    <label for="confirma-senha">Confirmação de Senha:</label>
+    <input type="password" name="confirma-senha" id="confirma-senha" />
+    <div class="botoes">
+      <input type="submit" class="cadastro" id="cadastro" value="Cadastrar" />
+      <input type="reset" class="limpa" value="Limpar" />
+    </div>
+    <a href="./login.html">Ir para a página de Login</a>
+  </form>
+  <script src="./cadastro.js"></script>
+</body>
+</html>
