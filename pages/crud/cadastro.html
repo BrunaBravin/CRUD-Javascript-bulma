@@ -31,9 +31,15 @@
       <div class="column">
         <button class="button is-success" onclick="openModal()" id="new">Incluir</i></button>
       </div>
-      <div class="column">
-        <button class="button is-success is-small" onclick="search()">Buscar dados</button>
-        <input id="pesquisa" type="search"/>
+      <div class="column field has-addons">
+        <div class="control">
+          <input class="input" id="pesquisa" type="search">
+        </div>
+        <div class="control">
+          <button class="button is-success" onclick="search()">
+            Buscar dados
+          </button>
+        </div>
       </div>
     </div>
     <div class="table is-vcentered">
