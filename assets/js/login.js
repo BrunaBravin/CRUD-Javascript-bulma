@@ -7,7 +7,7 @@ function validate(){
     var senha = document.getElementById("senha").value;
     bd = getItensBD();
     console.log((bd.find(bd => bd.nome == nome)));
-    if ((bd.find(bd => bd.nome == nome)) && ((bd.find(bd => bd.nome == senha)))){
+    if ((bd.find(bd => bd.nome == nome)) && ((bd.find(bd => bd.senha == senha)))){
       alert ("Login successfully");
       window.location = "home.html"; // Redirecionando para outra página.
       return false;

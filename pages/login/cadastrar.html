@@ -1,72 +1,69 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cadastro</title>
-  <link rel="stylesheet" href="../../assets/css/bulma.min.css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="../../assets/css/bulma.min.css"/>
 </head>
-
 <body>
-  <section class="hero is-success is-light">
+  <section class="hero is-success ">
     <div class="hero-body is-full-height">
       <div class="container">
         <h1 class="title">
-          Cadastro de Usuário
+          Cadastro
         </h1>
       </div>
     </div>
   </section>
   <nav class="breadcrumb is-centered is-large" aria-label="breadcrumbs">
-    <ul>
-      <li><a href="/pages/index.html" aria-current="page">Início</a></li>
-    </ul>
+      <ul>
+        <li><a href="../index.html">Início</a></li>
+        <li><a href="../login/login.html">Login</a></li>
+        <li class="is-active"><a href="#" aria-current="page">Cadastro</a></li>
+      </ul>
   </nav>
-  <form class="box" action="">
-    <h1 class="is-bold">Cadastro de Usuário</h1>
-    <div class="field">
-      <label class="label" fpr="nome">Nome</label>
-      <div class="control">
-        <input class="input " type="text" name="nome" id="nome">
+  <div class="box">
+    <form id="formCadastro">
+      <div class="field">
+        <label class="label" for="nome">Nome</label>
+        <div class="control">
+          <input id="nome" class="input" type="text" required>
+        </div>
       </div>
-    </div>
-    <div class="field">
-      <label class="label" for="email">Email</label>
-      <div class="control has-icons-left has-icons-right">
-        <input class="input" type="email" name="email" id="email">
+     
+      <div class="field">
+        <label class="label" for="idade">Idade</label>
+        <div class="control">
+          <input id="idade" class="input" type="number" required>
+        </div>
       </div>
-    </div>
-    <div class="field">
-      <label class="label" for="login">Username</label>
-      <div class="control has-icons-left has-icons-right">
-        <input class="input" type="text" name="login" id="login">
+  
+      <div class="field">
+        <label class="label" for="email">Email</label>
+        <div class="control">
+          <input id="email" class="input" type="email" required>
+        </div>
       </div>
-    </div>
-    <div class="field">
-      <label class="label" for="senha">Senha</label>
-      <div class="control has-icons-left has-icons-right">
-        <input class="input" type="password" name="senha" id="senha">
+  
+      <div class="field">
+        <label class="label" for="senha">Senha</label>
+        <div class="control">
+          <input id="senha" class="input" type="password" required>
+        </div>
       </div>
-    </div>
-    <div class="field">
-      <label class="label" for="confirma-senha">Confirmação de Senha</label>
-      <div class="control has-icons-left has-icons-right">
-        <input class="input" type="password" name="confirma-senha" id="confirma-senha">
+
+      <div class="field">
+        <label class="label" for="confirma-senha">Confirmar Senha</label>
+        <div class="control">
+          <input id="confirma-senha" class="input" type="password" required>
+        </div>
       </div>
-    </div>
-    <div class="field is-grouped is-grouped-centered botoes">
-      <div class="control">
-        <button class="button is-success cadastro" type="submit" id="cadastro">Cadastrar</button>
-      </div>
-      <div class="control">
-        <button class="button is-light is-light limpa" type="reset">Limpar</button>
-      </div>
-    </div>
-    <a href="./login.html">Ir para a página de Login</a>
-  </form>
+  
+      <button class="button is-success" type="submit">Cadastrar</button>
+    </form>
+  </div>
 
   <script src="../../assets/js/cadastro.js"></script>
 </body>
-
 </html>

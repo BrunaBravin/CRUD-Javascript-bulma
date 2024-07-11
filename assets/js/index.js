@@ -44,12 +44,14 @@ function openModal(edit = false, index = 0) {
     sIdade.value = itens[index].idade
     sEmail.value = itens[index].email
     sSenha.value = itens[index].senha
+    sConfirmaSenha.value = itens[index].senha
     id = index
   } else {
     sNome.value = ''
     sIdade.value = ''
     sEmail.value = ''
     sSenha.value = ''
+    sConfirmaSenha.value = ''
   }
   
 }
@@ -61,7 +63,6 @@ function editItem(index) {
 
 function confirmacao(index)
 {
-var x;
 var r=confirm("Excluir cadastro?");
 if (r==true)
   {
@@ -99,7 +100,12 @@ function insertItem(item, index) {
 
 btnSalvar.onclick = e => {
   
-  if (sNome.value == '' || sIdade.value == '' || sEmail.value == '' || sSenha.value == '') {
+  if (sNome.value == '' || sIdade.value == '' || sEmail.value == '' || sSenha.value == '' || sConfirmaSenha.value == '') {
+    alert('Todos os campos são obrigatórios.')
+  }
+
+  if (sSenha.value !== sConfirmaSenha.value) {
+    alert('As senhas não coincidem.')
     return
   }
 

@@ -1,44 +1,35 @@
-const $ = (elemento) => document.querySelector(elemento);
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('formCadastro');
 
-$("#cadastro").addEventListener("click", (ev) => {
-  ev.preventDefault();
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
 
-  const nome = $("#nome").value;
-  const email = $("#email").value;
-  const login = $("#login").value;
-  const senha = $("#senha").value;
-  const confirmaSenha = $("#confirma-senha").value;
+    const nome = document.getElementById('nome').value;
+    const idade = document.getElementById('idade').value;
+    const email = document.getElementById('email').value;
+    const senha = document.getElementById('senha').value;
+    const confirmaSenha = document.getElementById('confirma-senha').value;
 
-  const senhaConfirmada = senha === confirmaSenha;
+    // Validação das senhas
+    if (senha !== confirmaSenha) {
+      alert('As senhas não coincidem.');
+      return;
+    }
 
-  if (!senhaConfirmada) {
-    alert("Sua confirmação de senha não confere.\nPor favor verifique.");
-    return;
-  }
+    const novoFuncionario = { nome, idade, email, senha };
+    
+    // Adiciona o novo funcionário à lista existente
+    let itens = getItensBD();
+    itens.push(novoFuncionario);
+    setItensBD(itens);
 
-  const tudoPreenchido =
-    nome.length !== 0 &&
-    email.length !== 0 &&
-    login.length !== 0 &&
-    senhaConfirmada.length !== 0 &&
-    senha.length !== 0;
+    // Limpa o formulário
+    form.reset();
 
-  if (tudoPreenchido === false) {
-    alert("Preencha todos os campos antes de enviar.");
-    return;
-  }
+    // Redireciona para a página de cadastro
+    window.location.href = 'login.html';
+  });
 
-  const usuarioCadastrado = {
-    email,
-    nome,
-    login,
-    senha,
-    confirmaSenha,
-  };
-
-  const string = JSON.stringify(usuarioCadastrado);
-  localStorage.setItem("usuario", string);
-
-  alert("Cadastro realizado com sucesso!");
-  window.location.href = "./login.html";
+  const getItensBD = () => JSON.parse(localStorage.getItem('dbfunc')) ?? [];
+  const setItensBD = (itens) => localStorage.setItem('dbfunc', JSON.stringify(itens));
 });
