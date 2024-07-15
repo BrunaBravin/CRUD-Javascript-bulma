@@ -8,7 +8,8 @@ function validate(){
     bd = getItensBD();
     console.log((bd.find(bd => bd.nome == nome)));
     if ((bd.find(bd => bd.nome == nome)) && ((bd.find(bd => bd.senha == senha)))){
-      alert ("Login successfully");
+      alert("Login successfully");
+      localStorage.setItem('loggedInUser', nome);
       window.location = "home.html"; // Redirecionando para outra página.
       return false;
     }
@@ -23,6 +24,5 @@ function validate(){
         return false;
       }
     }
-  }
-  
+}
 

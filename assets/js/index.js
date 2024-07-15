@@ -5,6 +5,7 @@ const sNome = document.querySelector('#m-nome')
 const sIdade = document.querySelector('#m-idade')
 const sEmail = document.querySelector('#m-email')
 const sSenha = document.querySelector('#m-senha')
+const sConfirmaSenha = document.querySelector('#m-confirma-senha')
 const btnSalvar = document.querySelector('#btnSalvar')
 const searchInput = document.querySelector("[data-search]")
 
@@ -99,17 +100,17 @@ function insertItem(item, index) {
 }
 
 btnSalvar.onclick = e => {
-  
+  e.preventDefault(); // Move isso para o início para prevenir o comportamento padrão imediatamente
+
   if (sNome.value == '' || sIdade.value == '' || sEmail.value == '' || sSenha.value == '' || sConfirmaSenha.value == '') {
     alert('Todos os campos são obrigatórios.')
+    return // Adiciona isso para interromper a execução se a validação falhar
   }
 
   if (sSenha.value !== sConfirmaSenha.value) {
     alert('As senhas não coincidem.')
     return
   }
-
-  e.preventDefault();
 
   if (id !== undefined) {
     itens[id].nome = sNome.value
