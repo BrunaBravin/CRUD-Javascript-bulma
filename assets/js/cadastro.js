@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const senha = document.getElementById('senha').value;
     const confirmaSenha = document.getElementById('confirma-senha').value;
 
-    // Validação das senhas
     if (senha !== confirmaSenha) {
       alert('As senhas não coincidem.');
       return;
@@ -18,15 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const novoFuncionario = { nome, idade, email, senha };
     
-    // Adiciona o novo funcionário à lista existente
     let itens = getItensBD();
     itens.push(novoFuncionario);
     setItensBD(itens);
 
-    // Limpa o formulário
     form.reset();
 
-    // Redireciona para a página de cadastro
     window.location.href = 'login.html';
   });
 

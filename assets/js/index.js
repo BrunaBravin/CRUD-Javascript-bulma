@@ -100,11 +100,11 @@ function insertItem(item, index) {
 }
 
 btnSalvar.onclick = e => {
-  e.preventDefault(); // Move isso para o início para prevenir o comportamento padrão imediatamente
+  e.preventDefault();
 
   if (sNome.value == '' || sIdade.value == '' || sEmail.value == '' || sSenha.value == '' || sConfirmaSenha.value == '') {
     alert('Todos os campos são obrigatórios.')
-    return // Adiciona isso para interromper a execução se a validação falhar
+    return 
   }
 
   if (sSenha.value !== sConfirmaSenha.value) {
@@ -148,7 +148,7 @@ function removerItem() {
       let index = Array.from(tbody.children).indexOf(row);
       indices.push(index);
     });
-    indices.sort((a, b) => b - a);  // Em ordem decrescente para evitar problemas de índice ao remover
+    indices.sort((a, b) => b - a);  
     indices.forEach(index => {
       itens.splice(index, 1);
     });
